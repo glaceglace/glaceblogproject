@@ -25,7 +25,7 @@ SECRET_KEY = 'm5xe3zyea0-i5#9w*&25ms$l2zo$441k+otgo3(jvdnbf+h3kq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.glaceglace.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
