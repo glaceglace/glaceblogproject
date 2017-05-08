@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>出神呢！</title>
+		<title>出神呢</title>
 
 		<!-- meta -->
 		<meta charset="UTF-8">
@@ -14,13 +14,13 @@
 		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<link rel="stylesheet" href="{% static 'app_blog/css/pace.css' %}">
 	    <link rel="stylesheet" href="{% static 'app_blog/css/custom.css' %}">
-	    <link rel="stylesheet" href="{% static 'blog/css/friendly.css' %}">
+	    <link rel="stylesheet" href="{% static 'app_blog/css/friendly.css' %}">
 
 	    <!-- js -->
-	    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
-	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-	    <script src="{% static 'js/pace.min.js' %}"></script>
-	    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+	    <script src="{% static 'app_blog/js/jquery-2.1.3.min.js' %}"></script>
+	    <script src="{% static 'app_blog/js/bootstrap.min.js' %}"></script>
+	    <script src="{% static 'app_blog/js/pace.min.js' %}"></script>
+	    <script src="{% static 'app_blog/js/modernizr.custom.js' %}"></script>
 	</head>
 
 	<body>
@@ -42,10 +42,8 @@
 
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   								<ul class="nav navbar-nav navbar-right">
-    								<li class="cl-effect-11"><a href="index.html" data-hover="Home">Home</a></li>
-    								<li class="cl-effect-11"><a href="full-width.html" data-hover="Blog">Blog</a></li>
-    								<li class="cl-effect-11"><a href="about.html" data-hover="About">About</a></li>
-    								<li class="cl-effect-11"><a href="contact.html" data-hover="Contact">Contact</a></li>
+    								<li class="cl-effect-11"><a href={% url 'app_blog:index' %} >Home</a></li>
+
   								</ul>
 							</div><!-- /.navbar-collapse -->
 						</nav>
@@ -75,7 +73,7 @@
 					</main>
 					<aside class="col-md-4">
 						<div class="widget widget-recent-posts">		
-							<h3 class="widget-title">最新文章</h3>
+							<h3 class="widget-title">Lastest articles</h3>
 							{% get_recent_posts as recent_post_list %}		
 							<ul>
 								{% for post in recent_post_list %}
@@ -86,7 +84,7 @@
 							</ul>
 						</div>
 						<div class="widget widget-archives">		
-							<h3 class="widget-title">归档</h3>
+							<h3 class="widget-title">Archive</h3>
 							{% archives as date_list %}		
 							<ul>
 								{% for date in date_list %}
@@ -98,7 +96,7 @@
 						</div>
 
 						<div class="widget widget-category">		
-							<h3 class="widget-title">分类</h3>
+							<h3 class="widget-title">Class</h3>
 							{% get_categories as category_list %}		
 							<ul>
 								{% for category in category_list %}
@@ -128,15 +126,15 @@
 			<button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
 			<nav>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="full-width.html">Blog</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href={% url 'app_blog:index' %}>Home</a></li>
+					<li><a href={% url 'app_blog:index' %}>Blog</a></li>
+					<li><a href={% url 'app_blog:index' %}>About</a></li>
+					<li><a href={% url 'app_blog:index' %}>Contact</a></li>
 				</ul>
 			</nav>
 		</div>
 
-		<script src="{% static 'js/script.js' %}"></script>
+		<script src="{% static 'app_blog/js/script.js' %}"></script>
 
 	</body>
 </html>

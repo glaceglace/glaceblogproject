@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
-
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 
 class Category(models.Model):
@@ -18,7 +19,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
 	title = models.CharField(max_length=70)
-	body = models.TextField()
+	body = RichTextField()
 	created_time = models.DateTimeField()
 	modified_time = models.DateTimeField()
 	excerpt = models.CharField(max_length=200, blank=True) #文章摘要，内容可以为空
