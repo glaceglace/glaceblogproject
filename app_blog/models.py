@@ -5,11 +5,13 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 
+
 class Category(models.Model):
 	name = models.CharField(max_length=100)
 
 	def __str__(self):
 		return self.name
+
 
 class Tag(models.Model):
 	name = models.CharField(max_length=100)
@@ -66,4 +68,4 @@ class Post(models.Model):
 
 	class Meta:
 		ordering = ['-created_time','title']
-		
+

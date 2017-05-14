@@ -89,19 +89,19 @@
 							<ul>
 								{% for date in date_list %}
 								<li>
-									<a href="{% url 'app_blog:archives' date.year date.month %}">{{ date.year }} 年 {{ date.month }} 月</a>
+									<a href="{% url 'app_blog:archives' date.year date.month %}">{{ date.month }}/{{ date.year }}</a>
 								</li>
 								{% endfor %}
 							</ul>
 						</div>
 
 						<div class="widget widget-category">		
-							<h3 class="widget-title">Class</h3>
+							<h3 class="widget-title">Category</h3>
 							{% get_categories as category_list %}		
 							<ul>
 								{% for category in category_list %}
 								<li>
-									<a href="{% url 'app_blog:category' category.pk %}">{{ category.name }}</a>
+									<a href="{% url 'app_blog:category' category.pk %}">{{ category.name }}({{ category.num_posts }})</a>
 								</li>
 								{% endfor %}
 

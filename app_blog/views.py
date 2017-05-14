@@ -6,6 +6,9 @@ import markdown
 from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse,Http404
 import time
+#from django.db.models.aggregates import Count
+#from app_blog.models import Category
+
 
 def index(request):
     post_list = Post.objects.all().order_by('-created_time')
@@ -22,12 +25,13 @@ def detail(request, pk):
 	return render(request, 'app_blog/detail.html', context={'post':post})
 
 def archives(request, year, month):
-	post_list = Post.objects.filter(created_time__year=year, created_time__month=month)
+	post_list = Post.objects.filter(created_time__year=year, created_time__month=month,)
 	return render(request, 'app_blog/index.html', context={'post_list': post_list})
 
 def category(request, pk):
 	cate = get_object_or_404(Category, pk=pk)
 	post_list = Post.objects.filter(category=cate)
+#	category_list = Category.objects.annotate(num_posts=Count('post'))
 	return render(request, 'app_blog/index.html', context={'post_list':post_list})
 
 @csrf_protect
