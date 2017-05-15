@@ -46,12 +46,11 @@ INSTALLED_APPS = [
 
 CKEDITOR_UPLOAD_PATH = "article_images"
 CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
-
 CKEDITOR_CONFIGS = {
     'default': {
         #'skin': 'moono',
         # 'skin': 'office2013',
-        'toolbar_Basic': [
+	'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],
         'toolbar_YourCustomToolbarConfig': [
@@ -86,10 +85,13 @@ CKEDITOR_CONFIGS = {
         # 'filebrowserWindowWidth': 940,
         # 'toolbarCanCollapse': True,
         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
-        'tabSpaces': 4,
+
+
+	'tabSpaces': 4,
         'extraPlugins': ','.join([
             'uploadimage', # the upload image feature
             # your extra plugins here
+	'codesnippet',
             'div',
             'autolink',
             'autoembed',
@@ -104,6 +106,7 @@ CKEDITOR_CONFIGS = {
             'elementspath'
         ]),
     }
+
 }
 
 
@@ -140,24 +143,24 @@ WSGI_APPLICATION = 'GlaceBlog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-'''
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'glace_blog_db',
         'USER': 'GlaceGlace',
-        'PASSWORD': '940719',
+        'PASSWORD': 'z1x2c3v4',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
-'''
+
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Shanghai'
 

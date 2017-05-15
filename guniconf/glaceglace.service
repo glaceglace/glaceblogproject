@@ -1,0 +1,13 @@
+[Unit]
+Description=WWW.glaceglace.com gunicorn startup
+
+[Service]
+
+WorkingDirectory=~/www.glaceglace.com/glaceblogproject/
+
+ExecStart=path/gunicorn --bind unix:/tmp2/www.glaceglace.com.socket GlaceBlog.wsgi:application
+
+Restart=always
+
+
+
